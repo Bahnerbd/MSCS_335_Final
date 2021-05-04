@@ -1,0 +1,127 @@
+Data Project Data Categories
+
+All data pulled from OraclesElixir.com.
+OraclesElixir is a third party company that gathers data directly from Riot Games, the developers of League of Legends who captured the data directly from the games played.
+
+
+League of Legends is a real-time strategy game in which 5 players each control a unique character with various abilities.
+The goal of the game is to destroy the enemy team's nexus in the center of their base. 
+Killing enemy champions, minion and monsters gives you gold and experience and if you are considered "behind" your opponents you gain extra gold and experience upon champion kill or assist.
+There are a number of "neutral objectives" on the map which can be killed by either team. The team that lands the death blow on these neutral objectives gains various permanent bonus 
+strengths based on the objective killed. These objectives are Rift Herald, Dragons, and Baron.
+The map has several towers which defend their allied champions and must be destroyed to access a team's base. Between these towers there is a jungle containing monsters that can be 
+killed by either team. 
+The map is covered in the fog of war, a blanket of fog that blocks vision and thus preventing knowledge of what is happening outside of the vision radius of allied champions, minions and 
+towers. Players may buy wards that grant vision of an area or vision of enemy's invisible wards which can be destroyed.
+
+Your refers to the team represented by the current data point.
+
+ # denotes not used (due to irrelevence or to reduce variable count)
+ - denotes a potential independent variable
+ --- denotes a dependent variable
+
+Kept variables:
+ID Title					explanation
+2 league 					- Which region the teams come from. This is influential because different regions have different tendencies and metas(perspectives on what strategies are strong) which influence how the various stats. (One-hot vector) 
+19 gamelength 				- game length will influence how effective different champions/roles are at different points in the game
+20 result 					- Victory or Defeat for your team
+21 k						- Number of kills your team got
+22 d						- Number of times your team members died
+23 a						- Each kill multiplied by the number of players who assisted 
+30 fb						- First blood. Did your team get the first kill of the game?
+34 kpm						- Your team's total kills per minute
+35 okpm						- Enemy team's kills per minute
+36 ckpm						- Total champion kills per minute(both teams)
+37 fd						- Was the first dragon killed by your team?
+38 fdtime					- What time the first dragon was killed
+39 teamdragkills			- Times team killed a dragon
+40 oppdragkills				- Times enemy team killed a dragon	
+41 elementals				- Number of dragons killed by your team were elemental dragons
+42 oppelementals			- Number of dragons killed by enemy team were elemental dragons
+43 firedrakes				- Number of dragons killed by your team were fire elemental dragons
+44 waterdrakes				- Number of dragons killed by your team were water elemental dragons
+45 earthdrakes				- Number of dragons killed by your team were earth elemental dragons
+46 airdrakes				- Number of dragons killed by your team were wind elemental dragons
+47 elders					- Number of dragons killed by your team were elder dragons
+48 oppelders				- Number of dragons killed by enemy team were elder dragons
+49 herald					- Number of rift heralds killed by your team
+50 heraldtime				- Time that the rift herald was taken
+51 ft						- Was the first tower of the game taken by your team?
+52 fttime					- What time was the first tower of the game taken
+53 firstmidouter			- Was the first mid outer tower killed by your team? This is especially significant as the midlane outer turret grants a lot of control over the map
+54 firsttothreetowers		- Was your team the first to kill three towers?
+59 teambaronkills 			- Number of barons killed by your team.
+60 oppbaronkills			- Number of barons killed by enemy team
+61 dmgtochamps				- Total damage dealt to enemy champions by allied champions
+62 dmgtochampsperminute		- Amount of damage dealt to enemy champions by allied champions per minute
+65 wards					- Total number of wards placed by your team
+66 wpm						- Total number of wards placed by your team per minute
+68 wardkills				- Total number of enemy wards destroyed
+69 wcpm						- Total number of enemy wards destroyed per minute
+74 totalgold				- Total gold earned by your team
+75 earnedgpm				- Gold earned by your team per minute
+76 goldspent				- Total gold spent by your team
+77 gspd						- Percent difference in gold spent between teams
+80 monsterkillsownjungle	- How many monsters your team killed in your own side of the jungle
+81 monsterkillsenemyjungle	- How many monsters your team killed in the enemy's side of the jungle
+82 cspm						- Number of minions and monsters killed by your team per minute
+83 goldat10					- Total gold earned by your team at 10 minutes
+84 oppgoldat10				- Total gold earned by enemy team at 10 minutes
+85 gdat10					- Difference in gold between teams at 10 minutes
+86 goldat15					- Total gold earned at 15 minutes
+87 oppgoldat15				- Enemy gold earned at 15 minutes
+88 gdat15					- Difference in gold at 15 minutes
+89 xpat10					- Experience points earned at 10 minutes
+90 oppxpat10				- Enemy Experience points earned at 10 minutes
+91 xpdat10					- Difference in experience earned at 10 minutes
+92 csat10					- Total minions and monsters killed at 10 minutes by your team
+93 oppcsat10				- Total minions and monsters killed at 10 minutes by enemy team
+94 csdat10					- Difference in total minions and monsters killed at 10 minutes between teams
+95 csat15					- Total minions and monsters killed at 15 minutes by your team
+96 oppcsat15				- Total minions and monsters killed at 15 minutes by enemy team
+97 csdat15					- Difference in total minions and monsters killed at 15 minutes between teams
+
+
+#Not kept variables: 	#many not kept due to only applying to a single player
+#0 gameid
+#1 url
+#3 split
+#4 date
+#5 week
+#6 game
+#7 patchno
+#8 playerid
+#9 side
+#10 position 			# whole team, so no individual player data
+#11 player
+#12 team
+#13 champion 			# not implemented for team statistics - may implement being added from player statistics at a later date
+#14 ban1				# too many extra variables for almost no impact (only captures champions NOT in game)
+#15 ban2
+#16 ban3
+#17 ban4
+#18 ban5
+#24 teamkills			#- superfluous
+#25 teamdeaths			#- superfluous
+#26 doubles				#- doublekills player got
+#27 triples				#- triplekills player got
+#28 quadras				#- quadrakills player got
+#29 pentas				#- pentakills player got
+#31 fbassist
+#32 fbvictim
+#33 fbtime
+#55 teamtowerkills		#too indicative of who won
+#56 opptowerkills		#too indicative of who won
+#57 fbaron				#missing too much data which sucks since baron is such an influential objective to take
+#58 fbarontime			#missing too much data	
+#63 dmgshare
+#64 earnedgoldshare
+#67 wardshare
+#70 visionwards
+#71 visionwardbuys
+#72 visiblewardclearrate
+#73 invisiblewardclearrate
+#78 minionkills			#basically superfluous with cs
+#79 monsterkills		#basically superfluous with cs
+
+More details on not kept variables at: https://oracleselixir.com/matchdata/match-data-dictionary/

@@ -1,0 +1,37 @@
+Data project data categories
+
+Data pulled from https://www.kaggle.com/danofer/skillcraft which pulled the data from the University of California Irvine's machine learning repository located at http://archive.ics.uci.edu/ml/datasets/SkillCraft1+Master+Table+Dataset 
+
+This data is taken from replays of 1v1 ranked games of StarCraft II, a real time strategy game in which two or more players compete by accruing resources, building an army and wiping out the enemy. 
+A player loses when all of their buildings are destroyed or when they surrender.
+Players each start with one base hub and a number of workers located symmetrically on a map. The map is littered with locations containing clusters of minerals and usually gas geysers. 
+These are the resources which the players will use to build buildings, construct new technologies and produce armies. 
+
+
+
+00 GameID				#
+01 LeagueIndex			# Numerical list (1-8) based on categorical rank. Can be considered both categorical and numerical
+02 Age				# Age of player
+03 HoursPerWeek			# Hours player plays per week
+04 TotalHours			# Total hours player has played
+05 APM				# Average number of actions per minute (actions are commands given to units or structures)
+
+		# For the next few variables, one must understand control groups. Control groups are hotkeys that a player can assign units to such that when the hotkey is selected, the units and buildings assigned become selected for quick use.
+		
+06 SelectByHotkeys			# Number of units/buildings selected with hotkeys per timestamp
+07 AssignToHotkeys			# Number of units/buildings assigned to control groups per timestamp
+08 UniqueHotkeys			# Number of unique hotkeys used per timestamp
+09 MinimapAttacks			# Number of times a player uses the minimap to order a unit to attack anything on the way to a location per timestamp
+10 MinimapRightClicks		# Number of right clicks on the minimap per timestamp
+
+		# For the next few variables, PACs (Perception Action Cycles) are when a player focuses on a certain area by moving their screen and then makes an action. 
+		
+11 NumberOfPACs			# Number of PACs per timestamp
+12 GapBetweenPACs			# Average number of milliseconds between PACs
+13 ActionLatency			# Average time between focusing on an area and making the first action of the current PAC
+14 ActionsInPAC			# Average number of actions within a PAC
+15 TotalMapExplored		# The amount of the map explored by a player per timestamp
+16 WorkersMade			# Number of worker units trained per timestamp
+17 UniqueUnitsMade			# Number of unique units made per timestamp
+18 ComplexUnitsMade		# Number of units that require direct controls to be effective trained per timestamp
+19 ComplexAbilitiesUsed		# Number of times abilities from aforementioned complex units are used per timestamp
